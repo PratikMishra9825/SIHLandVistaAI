@@ -1,0 +1,15 @@
+{
+  "name": "landvista-ai-monorepo",
+  "version": "1.0.0",
+  "description": "LANDVISTA AI - Smart Land Utilisation & Decision Platform (SIH)",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "start:backend": "npm --prefix backend start",
+    "build:frontend": "npm --prefix frontend run build",
+    "seed:backend": "npm --prefix backend run seed",
+    "install:all": "npm --prefix frontend install && npm --prefix backend install"
+  }
+}
