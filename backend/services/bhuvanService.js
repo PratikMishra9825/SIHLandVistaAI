@@ -7,7 +7,7 @@
  */
 
 const getBhuvanToken = () => {
-  return process.env.BHUVAN_ACCESS_TOKEN || process.env.BHUVAN_API_KEY || '';
+  return process.env.Bhuvan_Api_Key || process.env.BHUVAN_API_KEY || process.env.BHUVAN_ACCESS_TOKEN || '';
 };
 
 /**

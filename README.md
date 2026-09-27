@@ -173,7 +173,7 @@ PORT=5000
 MONGODB_URI=mongodb://localhost:27017/landvista
 JWT_SECRET=your_jwt_secret_key_here
 NODE_ENV=development
-BHUVAN_API_KEY=your_bhuvan_api_key_optional
+Bhuvan_Api_Key=your_bhuvan_api_key_optional
 GEMINI_API_KEY=your_gemini_api_key_optional
 ```
 *(Note: LandVista includes an in-memory resilient fallback if MongoDB is not connected).*

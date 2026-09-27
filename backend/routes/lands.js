@@ -362,7 +362,7 @@ router.get('/bhuvan/reverse-geocode', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Latitude and Longitude required.' });
     }
 
-    const bhuvanToken = process.env.BHUVAN_ACCESS_TOKEN;
+    const bhuvanToken = process.env.Bhuvan_Api_Key || process.env.BHUVAN_API_KEY || process.env.BHUVAN_ACCESS_TOKEN;
     const latNum = parseFloat(lat);
     const lngNum = parseFloat(lng);
 
@@ -419,7 +419,7 @@ router.get('/bhuvan/reverse-geocode', async (req, res) => {
 router.post('/bhuvan/lulc-aoi', async (req, res) => {
   try {
     const { polygon, centroid, areaAcres } = req.body;
-    const bhuvanToken = process.env.BHUVAN_ACCESS_TOKEN;
+    const bhuvanToken = process.env.Bhuvan_Api_Key || process.env.BHUVAN_API_KEY || process.env.BHUVAN_ACCESS_TOKEN;
 
     // Authoritative ISRO Bhuvan LULC Classification classes
     const lulcResult = {
