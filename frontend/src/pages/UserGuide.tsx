@@ -207,17 +207,17 @@ export const UserGuide: React.FC = () => {
     <div className="max-w-5xl mx-auto py-6 space-y-6 font-sans pb-16">
       
       {/* 1. HERO HEADER */}
-      <div className="bg-[#FFFFFF] p-8 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-3 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F5EC] border border-[#BDE3CC] text-[#166534] text-xs font-bold font-mono">
-          <HelpCircle className="w-4 h-4 text-[#15803D]" />
-          <span>{badge}</span>
+      <div className="bg-[#FFFFFF] p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#D5E1D9] shadow-sm space-y-3 text-center">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F5EC] border border-[#BDE3CC] text-[#166534] text-xs font-bold font-mono max-w-full truncate">
+          <HelpCircle className="w-4 h-4 text-[#15803D] shrink-0" />
+          <span className="truncate">{badge}</span>
         </div>
 
-        <h1 className="font-bold text-3xl sm:text-4xl text-[#17211B] tracking-tight">
+        <h1 className="font-bold text-2xl sm:text-4xl text-[#17211B] tracking-tight">
           How to Use LandVista AI — {roleName} Guide
         </h1>
 
-        <p className="text-sm text-[#405048] font-medium max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#405048] font-medium max-w-2xl mx-auto leading-relaxed">
           Tailored standard operating procedures, workflows, and tools authorized for your <strong>{role.toUpperCase()}</strong> workspace.
         </p>
       </div>
@@ -231,7 +231,7 @@ export const UserGuide: React.FC = () => {
             <button
               key={idx}
               onClick={() => setActiveStep(idx)}
-              className={`p-3.5 rounded-2xl border transition-all text-left flex flex-col gap-1.5 ${
+              className={`p-3 sm:p-3.5 rounded-2xl border transition-all text-left flex flex-col gap-1.5 ${
                 isSelected
                   ? 'bg-[#E8F5EC] border-[#15803D] text-[#166534] shadow-sm font-bold'
                   : 'bg-[#FFFFFF] text-[#405048] hover:text-[#17211B] border-[#D5E1D9]'
@@ -248,47 +248,47 @@ export const UserGuide: React.FC = () => {
       </div>
 
       {/* 3. ACTIVE STEP DOSSIER */}
-      <div className="bg-[#FFFFFF] p-8 rounded-3xl border border-[#D5E1D9] space-y-6 shadow-sm">
-        <div className="flex items-center gap-4 border-b border-[#D5E1D9] pb-4">
-          <div className="w-14 h-14 rounded-2xl bg-[#E8F5EC] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
-            <StepIcon className="w-7 h-7" />
+      <div className="bg-[#FFFFFF] p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#D5E1D9] space-y-6 shadow-sm">
+        <div className="flex items-center gap-3 sm:gap-4 border-b border-[#D5E1D9] pb-4">
+          <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-[#E8F5EC] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
+            <StepIcon className="w-5 h-5 sm:w-7 sm:h-7" />
           </div>
-          <div>
-            <span className="text-xs font-bold text-[#166534] uppercase font-mono block">STEP {activeStep + 1} OF {steps.length}</span>
-            <h2 className="font-bold text-2xl text-[#17211B] tracking-tight">
+          <div className="min-w-0 flex-1">
+            <span className="text-[10px] sm:text-xs font-bold text-[#166534] uppercase font-mono block">STEP {activeStep + 1} OF {steps.length}</span>
+            <h2 className="font-bold text-lg sm:text-2xl text-[#17211B] tracking-tight truncate">
               {currentStep.title}
             </h2>
           </div>
         </div>
 
         <div className="space-y-3 font-sans text-sm">
-          <p className="text-[#17211B] font-bold leading-relaxed text-base">
+          <p className="text-[#17211B] font-bold leading-relaxed text-sm sm:text-base">
             {currentStep.desc}
           </p>
 
-          <div className="p-4 rounded-2xl bg-[#F8FBF9] border border-[#D5E1D9] text-[#405048] leading-relaxed text-xs font-medium">
+          <div className="p-3.5 sm:p-4 rounded-2xl bg-[#F8FBF9] border border-[#D5E1D9] text-[#405048] leading-relaxed text-xs font-medium">
             💡 <strong>Operating Procedure:</strong> {currentStep.details}
           </div>
         </div>
 
         {/* Navigation CTAs */}
-        <div className="flex items-center justify-between pt-4 border-t border-[#D5E1D9] text-xs font-bold">
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-[#D5E1D9] text-xs font-bold">
           <button
             disabled={activeStep === 0}
             onClick={() => setActiveStep((prev) => Math.max(0, prev - 1))}
-            className="px-4 py-2 rounded-xl bg-[#F8FBF9] text-[#17211B] hover:bg-[#E8F5EC] disabled:opacity-40 border border-[#D5E1D9] transition-all"
+            className="px-3.5 sm:px-4 py-2 rounded-xl bg-[#F8FBF9] text-[#17211B] hover:bg-[#E8F5EC] disabled:opacity-40 border border-[#D5E1D9] transition-all"
           >
-            ← Previous Step
+            ← Previous
           </button>
 
-          <span className="text-[#64736A] text-xs">
+          <span className="text-[#64736A] text-xs order-first sm:order-none w-full sm:w-auto text-center">
             {activeStep + 1} / {steps.length}
           </span>
 
           {activeStep < steps.length - 1 ? (
             <button
               onClick={() => setActiveStep((prev) => Math.min(steps.length - 1, prev + 1))}
-              className="px-5 py-2 rounded-xl bg-[#15803D] text-white font-bold hover:bg-[#166534] transition-all flex items-center gap-1.5 shadow-sm"
+              className="px-4 sm:px-5 py-2 rounded-xl bg-[#15803D] text-white font-bold hover:bg-[#166534] transition-all flex items-center gap-1.5 shadow-sm ml-auto sm:ml-0"
             >
               <span>Next Step</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -296,9 +296,9 @@ export const UserGuide: React.FC = () => {
           ) : (
             <Link
               to={role === 'government' ? '/government' : role === 'soilExpert' ? '/expert' : role === 'developer' ? '/developer' : role === 'admin' ? '/admin' : '/dashboard'}
-              className="px-5 py-2.5 rounded-xl bg-[#15803D] text-white font-bold hover:bg-[#166534] transition-all flex items-center gap-1.5 uppercase shadow-sm"
+              className="px-4 sm:px-5 py-2 rounded-xl bg-[#15803D] text-white font-bold hover:bg-[#166534] transition-all flex items-center gap-1.5 uppercase shadow-sm ml-auto sm:ml-0"
             >
-              <span>Open My Workspace</span>
+              <span>Open Workspace</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           )}

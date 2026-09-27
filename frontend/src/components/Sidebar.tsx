@@ -29,9 +29,16 @@ import { useAuth } from '../context/AuthContext';
 interface SidebarProps {
   isCollapsed: boolean;
   onToggle: () => void;
+  isMobileOpen?: boolean;
+  onCloseMobile?: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ 
+  isCollapsed, 
+  onToggle, 
+  isMobileOpen = false, 
+  onCloseMobile 
+}) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { startSihDemo, setIsChatOpen, isChatOpen } = useLand();
@@ -92,11 +99,25 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
   const navLinks = getNavLinks();
 
   return (
-    <aside
-      className={`fixed top-16 bottom-0 left-0 z-30 bg-[#FFFFFF] border-r border-[#D5E1D9] transition-all duration-300 flex flex-col justify-between shadow-sm ${
-        isCollapsed ? 'w-16' : 'w-64'
-      }`}
-    >
+    <>
+      {/* Mobile Drawer Backdrop Overlay */}
+      {isMobileOpen && (
+        <div
+          onClick={onCloseMobile}
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs md:hidden animate-in fade-in duration-200"
+          aria-hidden="true"
+        />
+      )}
+
+      <aside
+        className={`fixed top-16 bottom-0 left-0 z-40 md:z-30 bg-[#FFFFFF] border-r border-[#D5E1D9] transition-all duration-300 flex flex-col justify-between shadow-sm ${
+          isMobileOpen
+            ? 'w-64 translate-x-0 shadow-2xl'
+            : isCollapsed
+            ? 'w-16 -translate-x-full md:translate-x-0'
+            : 'w-64 -translate-x-full md:translate-x-0'
+        }`}
+      >
       {/* Top Section */}
       <div className="py-4 px-3 space-y-3">
         
@@ -205,5 +226,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
         )}
       </div>
     </aside>
+  </>
   );
 };

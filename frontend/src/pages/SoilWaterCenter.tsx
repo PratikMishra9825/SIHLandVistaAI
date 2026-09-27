@@ -73,7 +73,7 @@ export const SoilWaterCenter: React.FC = () => {
     <div className="space-y-6 pb-12 font-sans">
       
       {/* 1. HEADER */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-2xl bg-[#E8F5EC] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
             <FlaskConical className="w-6 h-6" />
@@ -85,16 +85,16 @@ export const SoilWaterCenter: React.FC = () => {
               </span>
               <SourceBadge type="official" label="LAB & SATELLITE DERIVED" />
             </div>
-            <h1 className="font-bold text-2xl text-[#17211B] tracking-tight">
+            <h1 className="font-bold text-xl sm:text-2xl text-[#17211B] tracking-tight break-words">
               Soil Geochemistry & Hydrological Stress Center
             </h1>
-            <p className="text-sm text-[#405048] font-medium">
+            <p className="text-xs sm:text-sm text-[#405048] font-medium">
               Diagnostic NPK analysis, Automated Soil Health Card OCR Parser & Aquifer Stress Analytics
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-start md:justify-end">
           <ScoreRing score={selectedParcel.soil.healthScore} size={70} strokeWidth={6} color="#15803D" label="Soil Index" />
           <ScoreRing score={selectedParcel.water.score} size={70} strokeWidth={6} color="#0284C7" label="Water Index" />
         </div>
@@ -105,7 +105,7 @@ export const SoilWaterCenter: React.FC = () => {
         
         {/* SOIL CHEMISTRY TELEMETRY (7 COLS) */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-[#FFFFFF] p-6 rounded-3xl border border-[#D5E1D9] space-y-4 shadow-sm">
+          <div className="bg-[#FFFFFF] p-4 sm:p-6 rounded-3xl border border-[#D5E1D9] space-y-4 shadow-sm">
             <div className="flex items-center justify-between border-b border-[#D5E1D9] pb-3">
               <span className="font-bold text-sm text-[#17211B] uppercase tracking-wider">
                 SOIL NUTRIENT EQUILIBRIUM RADAR
@@ -127,7 +127,7 @@ export const SoilWaterCenter: React.FC = () => {
             </div>
 
             {/* Parameter Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-xs font-mono">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-2.5 text-xs font-mono">
               <div className="bg-[#F8FBF9] p-3 rounded-2xl border border-[#D5E1D9] text-center">
                 <span className="text-[10px] text-[#64736A] font-bold block uppercase">pH LEVEL</span>
                 <p className="font-bold text-[#15803D] text-base">{selectedParcel.soil.pH}</p>
@@ -152,7 +152,7 @@ export const SoilWaterCenter: React.FC = () => {
                 <span className="text-[10px] text-[#405048] font-sans font-medium">{selectedParcel.soil.potassiumValue || 310} kg/ha</span>
               </div>
 
-              <div className="bg-[#F8FBF9] p-3 rounded-2xl border border-[#D5E1D9] text-center">
+              <div className="bg-[#F8FBF9] p-3 rounded-2xl border border-[#D5E1D9] text-center col-span-2 sm:col-span-1">
                 <span className="text-[10px] text-[#64736A] font-bold block uppercase">CARBON</span>
                 <p className="font-bold text-[#17211B] text-base">{selectedParcel.soil.organicCarbon}%</p>
                 <span className="text-[10px] text-[#405048] font-sans font-medium">Humus</span>

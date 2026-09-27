@@ -314,7 +314,7 @@ export const ExpertDashboard: React.FC = () => {
     <div className="space-y-6 font-sans pb-16 max-w-7xl mx-auto text-[#17211B]">
       
       {/* 1. EXPERT COMMAND HEADER */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-2xl bg-[#E8F5EC] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0 shadow-2xs">
             <UserCheck className="w-6 h-6" />
@@ -437,7 +437,7 @@ export const ExpertDashboard: React.FC = () => {
           <div className="lg:col-span-8 space-y-5">
             
             {/* 2.1 ACTIVE VISIT CARD & REAL-TIME STATUS CONTROLLER */}
-            <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-5">
+            <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-5">
               
               {/* Header with GPS Link */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#D5E1D9] pb-4">
@@ -567,7 +567,7 @@ export const ExpertDashboard: React.FC = () => {
             </div>
 
             {/* 2.2 PHYSICAL SOIL & WATER LAB ASSESSMENT FORM */}
-            <form onSubmit={handleSubmitSoilReport} className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] space-y-5 shadow-sm">
+            <form onSubmit={handleSubmitSoilReport} className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] space-y-5 shadow-sm">
               
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#D5E1D9] pb-4">
                 <div className="flex items-center gap-2.5">
@@ -597,7 +597,7 @@ export const ExpertDashboard: React.FC = () => {
               )}
 
               {/* Form Input Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 text-xs font-semibold">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-semibold">
                 <div>
                   <label className="text-xs text-[#17211B] block mb-1 font-bold">
                     SOIL pH (Acidity / Alkalinity)

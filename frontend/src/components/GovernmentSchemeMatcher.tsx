@@ -47,31 +47,31 @@ export const GovernmentSchemeMatcher: React.FC = () => {
     <div className="space-y-6 font-sans pb-12">
       
       {/* 1. TOP HEADER & APPLICANT PROFILE SELECTOR */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D6E2DA] shadow-sm space-y-5">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-2xl sm:rounded-3xl border border-[#D6E2DA] shadow-sm space-y-5">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#D6E2DA] pb-5">
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-[#EAF7EF] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
-              <Landmark className="w-6 h-6" />
+          <div className="flex items-center gap-3 sm:gap-3.5">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#EAF7EF] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
+              <Landmark className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-bold font-mono text-[#166534] uppercase tracking-wider">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2 mb-1">
+                <span className="text-[10px] sm:text-xs font-bold font-mono text-[#166534] uppercase tracking-wider truncate">
                   INTELLIGENT GOVERNMENT SCHEME MATCHER
                 </span>
                 <DataConfidenceBadge type="VERIFIED" label="OFFICIAL MINISTRY RULES" />
               </div>
-              <h2 className="font-bold text-2xl text-[#17211B] tracking-tight">
-                Government Subsidies & Incentives for Your Land
+              <h2 className="font-bold text-xl sm:text-2xl text-[#17211B] tracking-tight">
+                Government Subsidies & Incentives
               </h2>
-              <p className="text-sm text-[#4B5D52] font-medium">
+              <p className="text-xs sm:text-sm text-[#4B5D52] font-medium truncate">
                 Evaluated across Central & {selectedParcel.state || 'Maharashtra'} state schemes for {selectedParcel.name}
               </p>
             </div>
           </div>
 
           {/* Applicant Profile Selector */}
-          <div className="flex items-center bg-[#F8FBF9] p-1.5 rounded-2xl border border-[#D6E2DA] text-xs">
-            <span className="text-xs font-bold text-[#4B5D52] px-2.5 uppercase">Applicant:</span>
+          <div className="flex flex-wrap items-center bg-[#F8FBF9] p-1.5 rounded-2xl border border-[#D6E2DA] text-xs gap-1">
+            <span className="text-xs font-bold text-[#4B5D52] px-2 uppercase">Applicant:</span>
             {[
               { key: 'farmer', label: '👨‍🌾 Farmer' },
               { key: 'individual_landowner', label: '🏡 Landowner' },
@@ -81,7 +81,7 @@ export const GovernmentSchemeMatcher: React.FC = () => {
               <button
                 key={app.key}
                 onClick={() => setApplicantType(app.key as any)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   applicantType === app.key
                     ? 'bg-[#15803D] text-white shadow-sm'
                     : 'text-[#17211B] hover:text-[#166534] hover:bg-[#EAF7EF]'
@@ -94,11 +94,11 @@ export const GovernmentSchemeMatcher: React.FC = () => {
         </div>
 
         {/* AI Matcher Summary Strip */}
-        <div className="p-4 bg-[#EAF7EF] border border-[#BDE3CC] rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-sm text-[#166534]">
+        <div className="p-3.5 sm:p-4 bg-[#EAF7EF] border border-[#BDE3CC] rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm text-[#166534]">
           <div className="flex items-center gap-2.5">
             <Sparkles className="w-5 h-5 text-[#15803D] shrink-0" />
             <span className="font-medium text-[#17211B]">
-              <strong className="text-[#166534] font-bold">{report.matchedCount} Schemes Matched</strong> for your {selectedParcel.areaAcres}-acre parcel in {report.targetDistrict}, {report.targetState} under <strong>{activeScenario.toUpperCase()}</strong> development.
+              <strong className="text-[#166534] font-bold">{report.matchedCount} Schemes Matched</strong> for your {selectedParcel.areaAcres}-acre parcel in {report.targetDistrict}, {report.targetState} under <strong>{activeScenario.toUpperCase()}</strong>.
             </span>
           </div>
           <span className="text-xs font-bold text-[#4B5D52] shrink-0">
@@ -107,7 +107,7 @@ export const GovernmentSchemeMatcher: React.FC = () => {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex items-center gap-2 border-t border-[#D6E2DA] pt-3 text-xs overflow-x-auto">
+        <div className="flex items-center gap-2 border-t border-[#D6E2DA] pt-3 text-xs overflow-x-auto max-w-full pb-1">
           <button
             onClick={() => setActiveTab('all')}
             className={`px-4 py-2 rounded-xl font-bold uppercase transition-all whitespace-nowrap ${

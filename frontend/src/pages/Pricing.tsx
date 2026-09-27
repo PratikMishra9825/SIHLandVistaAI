@@ -237,76 +237,78 @@ export const Pricing: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-[#FFFFFF] rounded-3xl border border-[#D5E1D9] shadow-sm overflow-hidden text-xs">
-          <div className="grid grid-cols-12 bg-[#F8FBF9] p-4 border-b border-[#D5E1D9] font-extrabold text-[#17211B]">
-            <div className="col-span-6 sm:col-span-7">Platform Capabilities</div>
-            <div className="col-span-3 sm:col-span-2 text-center text-[#64736A]">Free Plan</div>
-            <div className="col-span-3 sm:col-span-3 text-center text-[#15803D]">Premium Plan</div>
-          </div>
-
-          <div className="divide-y divide-[#D5E1D9]/60">
-            <div className="grid grid-cols-12 p-4 items-center">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                Satellite GIS Land Intelligence & Boundary Tool
-              </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#15803D]">✓ Included</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Included</div>
+        <div className="bg-[#FFFFFF] rounded-3xl border border-[#D5E1D9] shadow-sm overflow-x-auto text-xs">
+          <div className="min-w-[540px]">
+            <div className="grid grid-cols-12 bg-[#F8FBF9] p-4 border-b border-[#D5E1D9] font-extrabold text-[#17211B]">
+              <div className="col-span-6 sm:col-span-7">Platform Capabilities</div>
+              <div className="col-span-3 sm:col-span-2 text-center text-[#64736A]">Free Plan</div>
+              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D]">Premium Plan</div>
             </div>
 
-            <div className="grid grid-cols-12 p-4 items-center">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                Multi-Criteria AI Suitability Ranking (10+ Land Uses)
+            <div className="divide-y divide-[#D5E1D9]/60">
+              <div className="grid grid-cols-12 p-4 items-center">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  Satellite GIS Land Intelligence & Boundary Tool
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#15803D]">✓ Included</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Included</div>
               </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#15803D]">✓ Included</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Included</div>
-            </div>
 
-            <div className="grid grid-cols-12 p-4 items-center">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                Government Scheme Matcher (PM-KUSUM, PMKSY, AIF)
+              <div className="grid grid-cols-12 p-4 items-center">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  Multi-Criteria AI Suitability Ranking (10+ Land Uses)
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#15803D]">✓ Included</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Included</div>
               </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#15803D]">✓ Included</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Included</div>
-            </div>
 
-            <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                Physical On-Site Certified Soil Expert Inspection
+              <div className="grid grid-cols-12 p-4 items-center">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  Government Scheme Matcher (PM-KUSUM, PMKSY, AIF)
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#15803D]">✓ Included</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Included</div>
               </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ Locked</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Unlimited Booking</div>
-            </div>
 
-            <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                Soil Lab Core Testing (N, P, K, pH, Organic Carbon, EC)
+              <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  Physical On-Site Certified Soil Expert Inspection
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ Locked</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Unlimited Booking</div>
               </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ Regional Estimate</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Verified Lab Values</div>
-            </div>
 
-            <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                Recommendation Re-Analysis with Lab Ground Truth
+              <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  Soil Lab Core Testing (N, P, K, pH, Organic Carbon, EC)
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ Regional Estimate</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Verified Lab Values</div>
               </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ None</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Automatic Engine Re-Run</div>
-            </div>
 
-            <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                Real-Time Socket.IO Live Status Tracker (6-Stages)
+              <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  Recommendation Re-Analysis with Lab Ground Truth
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ None</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Automatic Engine Re-Run</div>
               </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ None</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Live Dispatch Stepper</div>
-            </div>
 
-            <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
-              <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
-                “🌱 Ground-Verified” Trust Badge for Banks & Buyers
+              <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  Real-Time Socket.IO Live Status Tracker (6-Stages)
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ None</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Live Dispatch Stepper</div>
               </div>
-              <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ None</div>
-              <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Certified Dossier Badge</div>
+
+              <div className="grid grid-cols-12 p-4 items-center bg-[#F8FBF9]/60">
+                <div className="col-span-6 sm:col-span-7 font-semibold text-[#17211B]">
+                  “🌱 Ground-Verified” Trust Badge for Banks & Buyers
+                </div>
+                <div className="col-span-3 sm:col-span-2 text-center text-[#94A3B8]">✕ None</div>
+                <div className="col-span-3 sm:col-span-3 text-center text-[#15803D] font-bold">✓ Certified Dossier Badge</div>
+              </div>
             </div>
           </div>
         </div>

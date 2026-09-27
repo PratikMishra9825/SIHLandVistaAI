@@ -251,9 +251,9 @@ export const ExpertCheckup: React.FC = () => {
       {/* -----------------------------------------------------------
           1. HEADER & SERVICE INTRODUCTION
       ----------------------------------------------------------- */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div className="flex items-start gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-[#E8F5EC] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] text-2xl shrink-0 shadow-sm">
+      <div className="bg-[#FFFFFF] p-4 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6">
+        <div className="flex items-start gap-3.5 sm:gap-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#E8F5EC] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] text-xl sm:text-2xl shrink-0 shadow-sm">
             👨‍🌾
           </div>
           <div className="space-y-1">
@@ -269,7 +269,7 @@ export const ExpertCheckup: React.FC = () => {
                 {isPremium ? '⭐ PREMIUM UNLOCKED' : '🔒 PREMIUM REQUIRED'}
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#17211B] tracking-tight">
+            <h1 className="text-xl sm:text-3xl font-extrabold text-[#17211B] tracking-tight">
               Expert Land & Soil Checkup
             </h1>
             <p className="text-xs sm:text-sm text-[#526358] font-medium max-w-2xl">

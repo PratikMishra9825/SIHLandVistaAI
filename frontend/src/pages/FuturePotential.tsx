@@ -182,7 +182,7 @@ export const FuturePotential: React.FC = () => {
       {/* -----------------------------------------------------------
           1. HEADER: FUTURE DEVELOPMENT & LAND POTENTIAL
       ----------------------------------------------------------- */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-2xl bg-[#E8F5EC] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
             <Compass className="w-6 h-6" />
@@ -196,7 +196,7 @@ export const FuturePotential: React.FC = () => {
                 ✓ Verified Sources Only
               </span>
             </div>
-            <h1 className="font-extrabold text-2xl text-[#17211B] tracking-tight">
+            <h1 className="font-extrabold text-xl sm:text-2xl text-[#17211B] tracking-tight">
               Future Development & Land Potential
             </h1>
             <p className="text-xs sm:text-sm text-[#526358] font-medium">
@@ -225,7 +225,7 @@ export const FuturePotential: React.FC = () => {
       {/* -----------------------------------------------------------
           2. SATELLITE CADASTRE & INFRASTRUCTURE MAP VIEWPORT
       ----------------------------------------------------------- */}
-      <div className="bg-[#FFFFFF] p-6 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-4">
+      <div className="bg-[#FFFFFF] p-4 sm:p-6 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#D5E1D9] pb-3">
           <div className="flex items-center gap-2">
             <Layers className="w-5 h-5 text-[#15803D]" />
@@ -233,7 +233,7 @@ export const FuturePotential: React.FC = () => {
               Satellite Infrastructure Vector Map
             </h3>
           </div>
-          <div className="flex items-center gap-3 text-xs font-semibold text-[#64736A]">
+          <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-[#64736A]">
             <span className="flex items-center gap-1">
               <span className="w-3 h-3 rounded-full bg-[#15803D]"></span> Confirmed Land
             </span>
@@ -246,7 +246,7 @@ export const FuturePotential: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative w-full h-[320px] sm:h-[380px] rounded-2xl overflow-hidden border border-[#D5E1D9]">
+        <div className="relative w-full h-[300px] sm:h-[380px] rounded-2xl overflow-hidden border border-[#D5E1D9]">
           <div ref={mapRef} className="w-full h-full z-0" />
         </div>
       </div>
@@ -254,11 +254,11 @@ export const FuturePotential: React.FC = () => {
       {/* -----------------------------------------------------------
           3. EXISTING SURROUNDING INFRASTRUCTURE
       ----------------------------------------------------------- */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-5">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-5">
         <div className="flex items-center justify-between border-b border-[#D5E1D9] pb-3">
           <div className="flex items-center gap-2">
             <span className="font-bold text-base text-[#17211B]">1.</span>
-            <h3 className="font-extrabold text-base text-[#17211B]">
+            <h3 className="font-extrabold text-sm sm:text-base text-[#17211B]">
               NEARBY EXISTING INFRASTRUCTURE (GROUND TRUTH)
             </h3>
           </div>

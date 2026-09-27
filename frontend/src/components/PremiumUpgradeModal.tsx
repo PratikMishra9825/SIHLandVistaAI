@@ -35,11 +35,11 @@ export const PremiumUpgradeModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs font-sans animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/60 backdrop-blur-xs font-sans animate-fade-in">
       <div className="relative w-full max-w-2xl bg-[#FFFFFF] rounded-3xl shadow-2xl border border-[#D5E1D9] overflow-hidden flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="p-6 bg-gradient-to-r from-[#14532D] via-[#15803D] to-[#22C55E] text-white flex items-start justify-between">
+        <div className="p-4 sm:p-6 bg-gradient-to-r from-[#14532D] via-[#15803D] to-[#22C55E] text-white flex items-start justify-between">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-xs text-xs font-extrabold text-emerald-100">
               <Sparkles className="w-3.5 h-3.5" />

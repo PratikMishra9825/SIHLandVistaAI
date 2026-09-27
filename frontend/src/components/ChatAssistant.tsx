@@ -39,7 +39,7 @@ export const ChatAssistant: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-96 max-w-[calc(100vw-32px)] h-[520px] bg-[#FFFFFF] rounded-3xl border border-[#D5E1D9] shadow-2xl flex flex-col font-sans overflow-hidden text-[#17211B] animate-in slide-in-from-bottom-5 duration-300">
+    <div className="fixed bottom-2 right-2 left-2 sm:left-auto sm:bottom-4 sm:right-4 z-50 w-auto sm:w-96 max-w-[calc(100vw-16px)] sm:max-w-[calc(100vw-32px)] h-[480px] sm:h-[520px] bg-[#FFFFFF] rounded-3xl border border-[#D5E1D9] shadow-2xl flex flex-col font-sans overflow-hidden text-[#17211B] animate-in slide-in-from-bottom-5 duration-300">
       
       {/* Chat Header */}
       <div className="p-4 bg-[#F8FBF9] border-b border-[#D5E1D9] flex items-center justify-between">

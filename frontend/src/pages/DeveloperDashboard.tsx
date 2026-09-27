@@ -105,7 +105,7 @@ export const DeveloperDashboard: React.FC = () => {
     <div className="space-y-6 font-sans pb-12">
       
       {/* 1. DEVELOPER COMMAND HEADER */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D6E2DA] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D6E2DA] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-2xl bg-[#EAF7EF] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
             <Building2 className="w-6 h-6" />
@@ -115,20 +115,20 @@ export const DeveloperDashboard: React.FC = () => {
               <span className="text-xs font-bold font-mono text-[#166534]">DEVELOPER & INVESTOR SUITE</span>
               <DataConfidenceBadge type="VERIFIED" label="PUBLIC LAND OPPORTUNITIES" />
             </div>
-            <h1 className="font-bold text-2xl text-[#17211B] tracking-tight">
+            <h1 className="font-bold text-xl sm:text-2xl text-[#17211B] tracking-tight">
               Land Investment & Development Feasibility Intelligence
             </h1>
-            <p className="text-sm text-[#4B5D52] font-semibold">
+            <p className="text-xs sm:text-sm text-[#4B5D52] font-semibold">
               Only showing publicly listed, government-allocated, or landowner-consented development parcels
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-xs font-semibold">
-          <span className="px-4 py-2 rounded-2xl bg-[#F8FBF9] border border-[#D6E2DA] text-[#17211B] font-bold">
+        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+          <span className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl bg-[#F8FBF9] border border-[#D6E2DA] text-[#17211B] font-bold">
             Available: <strong>{filteredParcels.length} Parcels</strong>
           </span>
-          <span className="px-4 py-2 rounded-2xl bg-[#EAF7EF] text-[#166534] border border-[#BDE3CC] font-bold flex items-center gap-1">
+          <span className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl bg-[#EAF7EF] text-[#166534] border border-[#BDE3CC] font-bold flex items-center gap-1">
             <ShieldCheck className="w-3.5 h-3.5 text-[#15803D]" />
             <span>Privacy Protected</span>
           </span>
@@ -136,7 +136,7 @@ export const DeveloperDashboard: React.FC = () => {
       </div>
 
       {/* PRIVACY SHIELD BANNER */}
-      <div className="p-4 rounded-2xl bg-[#F8FBF9] border border-[#D6E2DA] flex items-center justify-between text-xs text-[#17211B] shadow-sm font-medium">
+      <div className="p-3.5 sm:p-4 rounded-2xl bg-[#F8FBF9] border border-[#D6E2DA] flex items-center justify-between text-xs text-[#17211B] shadow-sm font-medium">
         <div className="flex items-center gap-2.5">
           <ShieldCheck className="w-4 h-4 text-[#15803D] shrink-0" />
           <span>
@@ -146,7 +146,7 @@ export const DeveloperDashboard: React.FC = () => {
       </div>
 
       {/* 2. COMMERCIAL FILTERS STRIP */}
-      <div className="bg-[#FFFFFF] p-4 rounded-2xl border border-[#D6E2DA] shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs font-semibold">
+      <div className="bg-[#FFFFFF] p-3 sm:p-4 rounded-2xl border border-[#D6E2DA] shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs font-semibold">
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs text-[#4B5D52] uppercase mr-1 font-bold">Sector:</span>
           {[
@@ -158,7 +158,7 @@ export const DeveloperDashboard: React.FC = () => {
             <button
               key={sec.key}
               onClick={() => setTargetSector(sec.key as any)}
-              className={`px-3.5 py-2 rounded-xl font-bold uppercase transition-all ${
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl font-bold uppercase transition-all ${
                 targetSector === sec.key ? 'bg-[#15803D] text-white shadow-sm' : 'bg-[#F8FBF9] text-[#17211B] hover:bg-[#EAF7EF] border border-[#D6E2DA]'
               }`}
             >
@@ -167,7 +167,7 @@ export const DeveloperDashboard: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-4 text-xs text-[#17211B]">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-[#17211B]">
           <div className="flex items-center gap-2">
             <span className="font-bold">Min Acres:</span>
             <input

@@ -415,8 +415,8 @@ export const MapContainer: React.FC = () => {
       {/* -----------------------------------------------------------
           REAL-TIME TELEMETRY & GPS ACCURACY HUD STRIP
       ----------------------------------------------------------- */}
-      <div className="px-4 py-2.5 bg-[#F8FBF9] border-b border-[#D5E1D9] flex flex-wrap items-center justify-between gap-3 text-xs">
-        <div className="flex flex-wrap items-center gap-4 text-[#17211B]">
+      <div className="px-3 sm:px-4 py-2 sm:py-2.5 bg-[#F8FBF9] border-b border-[#D5E1D9] flex flex-wrap items-center justify-between gap-2 sm:gap-3 text-xs">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[#17211B]">
           
           {/* Latitude & Longitude */}
           <div className="flex items-center gap-1.5">
@@ -476,22 +476,22 @@ export const MapContainer: React.FC = () => {
       )}
 
       {/* Map Canvas Viewport */}
-      <div className="relative w-full h-[440px] lg:h-[500px]">
+      <div className="relative w-full h-[400px] sm:h-[440px] lg:h-[500px]">
         <div ref={mapRef} className="w-full h-full z-0" />
 
         {/* Refine Mode Helper Overlay */}
         {isRefineMode && (
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-amber-500 text-white px-4 py-2 rounded-2xl shadow-xl font-bold text-xs flex items-center gap-2 border border-white/20 backdrop-blur-sm animate-bounce">
-            <Crosshair className="w-4 h-4" />
-            <span>Click map to add boundary points or drag center pin. Click 'Save' when done.</span>
+          <div className="absolute top-2 sm:top-4 left-1/2 transform -translate-x-1/2 z-10 bg-amber-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl shadow-xl font-bold text-[11px] sm:text-xs flex items-center gap-2 border border-white/20 backdrop-blur-sm animate-bounce max-w-[90%] text-center">
+            <Crosshair className="w-4 h-4 shrink-0" />
+            <span>Click map to add boundary points or drag pin. Save when done.</span>
           </div>
         )}
 
         {/* Left Floating Intelligence Layers Panel */}
-        <div className="absolute top-4 left-4 z-10 bg-[#FFFFFF]/95 p-3.5 rounded-2xl border border-[#D5E1D9] text-xs max-w-[210px] shadow-md backdrop-blur-md">
-          <div className="flex items-center gap-1.5 font-bold text-[#17211B] mb-2.5 border-b border-[#D5E1D9] pb-1.5">
-            <Layers className="w-4 h-4 text-[#15803D]" />
-            <span className="uppercase text-[11px] tracking-wider">GIS OVERLAYS</span>
+        <div className="absolute top-2 sm:top-4 left-2 sm:left-4 z-10 bg-[#FFFFFF]/95 p-2.5 sm:p-3.5 rounded-2xl border border-[#D5E1D9] text-[11px] sm:text-xs max-w-[170px] sm:max-w-[210px] shadow-md backdrop-blur-md">
+          <div className="flex items-center gap-1.5 font-bold text-[#17211B] mb-2 border-b border-[#D5E1D9] pb-1">
+            <Layers className="w-3.5 h-3.5 text-[#15803D]" />
+            <span className="uppercase text-[10px] sm:text-[11px] tracking-wider">GIS OVERLAYS</span>
           </div>
 
           <div className="space-y-2 text-xs font-medium text-[#17211B]">

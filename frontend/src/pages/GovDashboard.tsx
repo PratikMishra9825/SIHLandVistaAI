@@ -130,7 +130,7 @@ export const GovDashboard: React.FC = () => {
     <div className="space-y-6 pb-12 font-sans">
       
       {/* 1. GOVERNMENT PORTFOLIO COMMAND HEADER */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D6E2DA] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D6E2DA] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-2xl bg-[#EAF7EF] border border-[#BDE3CC] flex items-center justify-center text-[#15803D] shrink-0">
             <Building2 className="w-6 h-6" />
@@ -140,30 +140,30 @@ export const GovDashboard: React.FC = () => {
               <span className="text-xs font-bold font-mono text-[#166534]">GOVERNMENT LAND BANK & INFRASTRUCTURE MATRIX</span>
               <DataConfidenceBadge type="VERIFIED" label="STATE REVENUE & URBAN PLANNING" />
             </div>
-            <h1 className="font-bold text-2xl text-[#17211B] tracking-tight">
+            <h1 className="font-bold text-xl sm:text-2xl text-[#17211B] tracking-tight">
               Public Land Prioritisation & Social Welfare Matrix
             </h1>
-            <p className="text-sm text-[#4B5D52] font-medium">
+            <p className="text-xs sm:text-sm text-[#4B5D52] font-medium">
               State Land Bank Analytics • Automated Public Infrastructure & Affordable Housing Suitability
             </p>
           </div>
         </div>
 
         {/* Portfolio Vitals */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs font-mono">
-          <div className="bg-[#F8FBF9] px-3.5 py-2.5 rounded-2xl border border-[#D6E2DA]">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono w-full md:w-auto">
+          <div className="bg-[#F8FBF9] px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl border border-[#D6E2DA]">
             <span className="text-[10px] font-bold text-[#4B5D52] block uppercase">INVENTORY</span>
             <p className="font-bold text-[#17211B] text-sm">3,890 <span className="text-xs text-[#4B5D52]">Ac</span></p>
           </div>
-          <div className="bg-[#EAF7EF] px-3.5 py-2.5 rounded-2xl border border-[#BDE3CC]">
+          <div className="bg-[#EAF7EF] px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl border border-[#BDE3CC]">
             <span className="text-[10px] font-bold text-[#166534] block uppercase">HOUSING</span>
             <p className="font-bold text-[#166534] text-sm">840 <span className="text-xs">Ac</span></p>
           </div>
-          <div className="bg-[#EFF6FF] px-3.5 py-2.5 rounded-2xl border border-[#BFDBFE]">
+          <div className="bg-[#EFF6FF] px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl border border-[#BFDBFE]">
             <span className="text-[10px] font-bold text-[#1E40AF] block uppercase">HEALTH & ED</span>
             <p className="font-bold text-[#1E40AF] text-sm">412 <span className="text-xs">Ac</span></p>
           </div>
-          <div className="bg-[#FEF3C7] px-3.5 py-2.5 rounded-2xl border border-[#FDE68A]">
+          <div className="bg-[#FEF3C7] px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl border border-[#FDE68A]">
             <span className="text-[10px] font-bold text-[#92400E] block uppercase">RENEWABLE</span>
             <p className="font-bold text-[#92400E] text-sm">1,240 <span className="text-xs">Ac</span></p>
           </div>
@@ -171,7 +171,7 @@ export const GovDashboard: React.FC = () => {
       </div>
 
       {/* 2. PUBLIC SECTOR PRIORITIZATION & BATCH ANALYSIS BAR */}
-      <div className="bg-[#FFFFFF] p-4 rounded-2xl border border-[#D6E2DA] shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs font-semibold">
+      <div className="bg-[#FFFFFF] p-3 sm:p-4 rounded-2xl border border-[#D6E2DA] shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs font-semibold">
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs text-[#4B5D52] uppercase mr-1 font-bold">Public Need:</span>
           {[
@@ -184,7 +184,7 @@ export const GovDashboard: React.FC = () => {
             <button
               key={sec.key}
               onClick={() => setTargetPublicSector(sec.key as any)}
-              className={`px-3.5 py-2 rounded-xl font-bold uppercase transition-all ${
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl font-bold uppercase transition-all ${
                 targetPublicSector === sec.key ? 'bg-[#15803D] text-white shadow-sm' : 'bg-[#F8FBF9] text-[#17211B] hover:bg-[#EAF7EF] border border-[#D6E2DA]'
               }`}
             >
@@ -193,7 +193,7 @@ export const GovDashboard: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
           <span className="text-[#17211B] font-bold">{selectedParcelIds.length} Parcels Selected</span>
           <button
             onClick={handleBatchAnalyze}

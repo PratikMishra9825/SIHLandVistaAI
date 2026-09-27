@@ -177,7 +177,7 @@ export const AdminDashboard: React.FC = () => {
       </div>
 
       {/* 2. TABBED NAVIGATION BAR */}
-      <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-[#FFFFFF] rounded-2xl border border-[#D5E1D9] shadow-2xs">
+      <div className="flex items-center gap-1.5 p-1.5 bg-[#FFFFFF] rounded-2xl border border-[#D5E1D9] shadow-2xs overflow-x-auto max-w-full pb-1">
         {navTabs.map((t) => {
           const Icon = t.icon;
           const isActive = activeTab === t.id;
@@ -185,7 +185,7 @@ export const AdminDashboard: React.FC = () => {
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id as any)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-extrabold flex items-center gap-2 transition-all ${
+              className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-extrabold flex items-center gap-2 transition-all whitespace-nowrap shrink-0 ${
                 isActive 
                   ? 'bg-[#15803D] text-white shadow-xs' 
                   : 'bg-transparent text-[#64736A] hover:bg-[#F8FBF9] hover:text-[#17211B]'

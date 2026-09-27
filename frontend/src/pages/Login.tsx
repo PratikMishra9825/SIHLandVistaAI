@@ -275,11 +275,11 @@ export const Login: React.FC = () => {
 
           {/* RIGHT COLUMN: ENTERPRISE LOGIN CARD */}
           <div className="lg:col-span-5">
-            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-5">
+            <div className="bg-[#FFFFFF] p-4 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-sm space-y-5">
               
               {/* Card Header */}
               <div className="space-y-1">
-                <h2 className="font-bold text-2xl text-[#17211B] tracking-tight">
+                <h2 className="font-bold text-xl sm:text-2xl text-[#17211B] tracking-tight">
                   {isRegisterMode ? 'Create Account' : 'Welcome back'}
                 </h2>
                 <p className="text-xs text-[#405048] font-medium">

@@ -120,8 +120,8 @@ export const HowToUseModal: React.FC<{ isOpen: boolean; onClose: () => void }> =
   const help = getPageHelp();
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#17211B]/60 backdrop-blur-sm flex items-center justify-center p-4 font-sans animate-in fade-in duration-200">
-      <div className="w-full max-w-2xl bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-2xl space-y-5 text-[#17211B]">
+    <div className="fixed inset-0 z-50 bg-[#17211B]/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 font-sans animate-in fade-in duration-200">
+      <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-2xl space-y-4 sm:space-y-5 text-[#17211B]">
         
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#D5E1D9] pb-3">

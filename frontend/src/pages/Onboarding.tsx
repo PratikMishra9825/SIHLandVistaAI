@@ -336,13 +336,13 @@ export const Onboarding: React.FC = () => {
     <div className="max-w-7xl mx-auto space-y-6 font-sans pb-16 px-2 sm:px-4">
       
       {/* 1. TOP HEADER & VALUE PROPOSITION */}
-      <div className="bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] p-4 sm:p-7 rounded-3xl border border-[#D5E1D9] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F5EC] border border-[#BDE3CC] text-[#166534] text-xs font-bold">
             <Sparkles className="w-3.5 h-3.5 text-[#15803D]" />
             <span>LANDVISTA AI • LAND REGISTRATION & GIS STUDIO</span>
           </div>
-          <h1 className="font-bold text-2xl sm:text-3xl text-[#17211B] tracking-tight">
+          <h1 className="font-bold text-xl sm:text-3xl text-[#17211B] tracking-tight">
             Register & Analyze Your Land
           </h1>
           <p className="text-xs sm:text-sm text-[#405048] font-medium max-w-2xl">
@@ -354,7 +354,7 @@ export const Onboarding: React.FC = () => {
         {parcelCalculations && (
           <button
             onClick={() => setCurrentStep(4)}
-            className="px-6 py-3 rounded-2xl bg-[#15803D] hover:bg-[#166534] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all hover:scale-105 active:scale-95 shrink-0 flex items-center gap-2"
+            className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-[#15803D] hover:bg-[#166534] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all hover:scale-105 active:scale-95 shrink-0 flex items-center gap-2 self-start md:self-auto"
           >
             <span>Review & Save</span>
             <ArrowRight className="w-4 h-4" />
@@ -363,7 +363,7 @@ export const Onboarding: React.FC = () => {
       </div>
 
       {/* 2. SIMPLE 4-STAGE PROGRESS INDICATOR */}
-      <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-3xl mx-auto text-xs font-bold">
+      <div className="grid grid-cols-4 gap-1.5 sm:gap-4 max-w-3xl mx-auto text-xs font-bold">
         {[
           { num: '01', title: 'LAND', step: 1 },
           { num: '02', title: 'LOCATION', step: 2 },
@@ -374,14 +374,14 @@ export const Onboarding: React.FC = () => {
             key={item.num}
             type="button"
             onClick={() => setCurrentStep(item.step as any)}
-            className={`p-3 rounded-2xl border text-center transition-all ${
+            className={`p-2 sm:p-3 rounded-2xl border text-center transition-all ${
               currentStep === item.step
                 ? 'bg-[#E8F5EC] border-[#15803D] text-[#166534] shadow-xs scale-[1.02]'
                 : 'bg-[#FFFFFF] border-[#D5E1D9] text-[#64736A] hover:bg-[#F8FBF9]'
             }`}
           >
-            <span className="block text-[10px] text-[#64736A] font-bold uppercase">{item.num}</span>
-            <span className="text-xs font-bold mt-0.5 block truncate">{item.title}</span>
+            <span className="block text-[9px] sm:text-[10px] text-[#64736A] font-bold uppercase">{item.num}</span>
+            <span className="text-[11px] sm:text-xs font-bold mt-0.5 block truncate">{item.title}</span>
           </button>
         ))}
       </div>
@@ -390,7 +390,7 @@ export const Onboarding: React.FC = () => {
       {/* SECTION 1: BASIC LAND DETAILS (When Step 1 active or expanded) */}
       {/* ========================================================================= */}
       {currentStep === 1 && (
-        <div className="max-w-4xl mx-auto bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-xs space-y-6 animate-in fade-in">
+        <div className="max-w-4xl mx-auto bg-[#FFFFFF] p-4 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-xs space-y-6 animate-in fade-in">
           <div className="flex items-center justify-between border-b border-[#D5E1D9] pb-3">
             <div>
               <h3 className="font-bold text-lg sm:text-xl text-[#17211B]">Section 1: Basic Land Information</h3>
@@ -401,7 +401,7 @@ export const Onboarding: React.FC = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs font-semibold">
             {/* Land Name */}
             <div>
               <label className="block mb-1.5 text-[#17211B] font-bold">

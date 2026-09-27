@@ -150,33 +150,33 @@ export const SIHDemoModal: React.FC = () => {
   if (!isSihDemoActive) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#17211B]/60 backdrop-blur-sm flex items-center justify-center p-4 font-sans animate-in fade-in duration-300">
-      <div className="w-full max-w-4xl bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-2xl space-y-6 text-[#17211B]">
+    <div className="fixed inset-0 z-50 bg-[#17211B]/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 font-sans animate-in fade-in duration-300">
+      <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#FFFFFF] p-4 sm:p-8 rounded-3xl border border-[#D5E1D9] shadow-2xl space-y-4 sm:space-y-6 text-[#17211B]">
         
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-[#D5E1D9] pb-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#E8F5EC] text-[#15803D] border border-[#BDE3CC] flex items-center justify-center font-bold">
-              <Sparkles className="w-5 h-5" />
+        <div className="flex items-center justify-between border-b border-[#D5E1D9] pb-3 sm:pb-4 gap-2">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-[#E8F5EC] text-[#15803D] border border-[#BDE3CC] flex items-center justify-center font-bold shrink-0">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold font-mono text-[#166534] uppercase tracking-wider">PRODUCT WALKTHROUGH</span>
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span className="text-[10px] sm:text-xs font-bold font-mono text-[#166534] uppercase tracking-wider">PRODUCT WALKTHROUGH</span>
                 <DataConfidenceBadge type="VERIFIED" label="LIVE DEMONSTRATION" />
               </div>
-              <h2 className="font-bold text-xl text-[#17211B]">
+              <h2 className="font-bold text-base sm:text-xl text-[#17211B] truncate">
                 LandVista AI — Master Product Walkthrough
               </h2>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-bold">
-            <span className="text-[#15803D]">
-              Scene {currentScene} of {demoScenes.length}
+          <div className="flex items-center gap-1.5 sm:gap-2 text-xs font-bold shrink-0">
+            <span className="text-[#15803D] text-[11px] sm:text-xs whitespace-nowrap">
+              Scene {currentScene}/{demoScenes.length}
             </span>
             <button
               onClick={stopSihDemo}
-              className="p-1.5 rounded-lg hover:bg-[#E8F5EC] text-[#64736A] hover:text-[#17211B] transition-all ml-2"
+              className="p-1.5 rounded-lg hover:bg-[#E8F5EC] text-[#64736A] hover:text-[#17211B] transition-all ml-1"
               title="Exit Walkthrough"
             >
               <X className="w-5 h-5" />
@@ -185,27 +185,27 @@ export const SIHDemoModal: React.FC = () => {
         </div>
 
         {/* Scene Hero Card */}
-        <div className="p-6 bg-[#F8FBF9] rounded-2xl border border-[#D5E1D9] space-y-4">
-          <div className="flex items-start justify-between gap-4">
-            <div className="space-y-1">
-              <span className={`text-xs ${currentSceneData.color} font-bold block uppercase`}>
+        <div className="p-4 sm:p-6 bg-[#F8FBF9] rounded-2xl border border-[#D5E1D9] space-y-3 sm:space-y-4">
+          <div className="flex items-start justify-between gap-3">
+            <div className="space-y-1 min-w-0">
+              <span className={`text-[10px] sm:text-xs ${currentSceneData.color} font-bold block uppercase`}>
                 {currentSceneData.title}
               </span>
-              <h3 className="font-bold text-xl text-[#17211B]">
+              <h3 className="font-bold text-base sm:text-xl text-[#17211B] leading-tight">
                 {currentSceneData.subtitle}
               </h3>
             </div>
 
-            <div className={`w-12 h-12 rounded-2xl bg-[#FFFFFF] border border-[#D5E1D9] flex items-center justify-center ${currentSceneData.color} shrink-0`}>
-              <IconComponent className="w-6 h-6" />
+            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#FFFFFF] border border-[#D5E1D9] flex items-center justify-center ${currentSceneData.color} shrink-0`}>
+              <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
           </div>
 
-          <p className="text-sm text-[#405048] leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-[#405048] leading-relaxed font-medium">
             {currentSceneData.description}
           </p>
 
-          <div className="p-3 bg-[#FFFFFF] rounded-xl border border-[#D5E1D9] flex items-center justify-between text-xs">
+          <div className="p-2.5 sm:p-3 bg-[#FFFFFF] rounded-xl border border-[#D5E1D9] flex flex-col sm:flex-row sm:items-center justify-between text-[11px] sm:text-xs gap-1">
             <span className="font-bold text-[#166534]">TELEMETRY & VERIFICATION:</span>
             <span className="font-bold text-[#17211B]">{currentSceneData.metric}</span>
           </div>

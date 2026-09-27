@@ -54,11 +54,11 @@ export const LocationAccuracyModal: React.FC<LocationAccuracyModalProps> = ({
   const areaHa = (currentParcelAreaAcres * 0.404686).toFixed(2);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in">
-      <div className="relative w-full max-w-lg bg-[#FFFFFF] rounded-3xl shadow-2xl border border-[#D5E1D9] overflow-hidden font-sans text-[#17211B] flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-2 sm:p-4 animate-in fade-in">
+      <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-[#FFFFFF] rounded-3xl shadow-2xl border border-[#D5E1D9] overflow-hidden font-sans text-[#17211B] flex flex-col">
         
         {/* Header */}
-        <div className="px-6 py-4 bg-[#F8FBF9] border-b border-[#D5E1D9] flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 bg-[#F8FBF9] border-b border-[#D5E1D9] flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${
               isPoorAccuracy ? 'bg-amber-100 text-amber-800' : 'bg-[#E8F5EC] text-[#15803D]'

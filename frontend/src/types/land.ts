@@ -297,15 +297,29 @@ export interface AIRecommendation {
   risks: string[];
   constraints?: string[];
   opportunities?: string[];
-  dataPointsUsed?: string[];
   economics: EconomicProjection;
   economicProjection?: EconomicProjection;
+  dataPointsUsed?: string[];
   sustainabilityScore?: number;
   confidenceScore?: number;
   matchedSchemeIds?: string[];
   recommendedPhases?: string[];
   appliedRules?: string[];
   evidenceList?: RAGEvidenceItem[];
+  primarySummary?: string;
+  suggestedComponents?: string[];
+  financialEstimate?: {
+    totalRange: string;
+    breakdown: Array<{ item: string; range: string }>;
+    notes?: string;
+  };
+  applicableSchemes?: Array<{
+    name: string;
+    department: string;
+    benefit: string;
+    url?: string;
+  }>;
+  alternativeReason?: string;
 }
 
 export interface FullAnalysisResult {
