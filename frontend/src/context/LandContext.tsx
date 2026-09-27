@@ -7,6 +7,7 @@ import { useAuth } from './AuthContext';
 
 import { getSocket, joinUserRoom, joinBookingRoom } from '../services/socket';
 import type { ExpertBooking } from '../types/land';
+import { apiUrl } from '../services/apiConfig';
 
 export interface LocationDetectionResult {
   lat: number;
@@ -473,7 +474,7 @@ export const LandProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsAiGenerating(true);
 
     try {
-      const res = await fetch('http://localhost:5000/api/ai/chat', {
+      const res = await fetch(apiUrl('/api/ai/chat'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -591,7 +592,7 @@ export const LandProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const fetchUserBookings = useCallback(async () => {
     try {
       const userId = user?.id || 'user-default';
-      const res = await fetch(`http://localhost:5000/api/experts/my-bookings?userId=${userId}`);
+      const res = await fetch(apiUrl(`/api/experts/my-bookings?userId=${userId}`));
       if (res.ok) {
         const json = await res.json();
         if (json.data && Array.isArray(json.data)) {
@@ -636,7 +637,7 @@ export const LandProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const upgradeToPremium = async (paymentMethod = 'SIH Demo / Test Payment') => {
     try {
       const userId = user?.id || 'user-default';
-      const res = await fetch('http://localhost:5000/api/payments/verify-test-payment', {
+      const res = await fetch(apiUrl('/api/payments/verify-test-payment'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -680,7 +681,7 @@ export const LandProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
 
     try {
-      const res = await fetch('http://localhost:5000/api/experts/book', {
+      const res = await fetch(apiUrl('/api/experts/book'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -745,7 +746,7 @@ export const LandProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const updateBookingStatus = async (status: any) => {
     if (!activeBooking) return;
     try {
-      await fetch(`http://localhost:5000/api/experts/bookings/${activeBooking.id}/status`, {
+      await fetch(apiUrl(`/api/experts/bookings/${activeBooking.id}/status`), {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status })

@@ -19,6 +19,7 @@ import {
   Check
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { apiUrl } from '../services/apiConfig';
 
 export const AdminDashboard: React.FC = () => {
   // Navigation tab state
@@ -50,28 +51,28 @@ export const AdminDashboard: React.FC = () => {
       setIsLoading(true);
 
       // 1. Overview Metrics
-      const resOverview = await fetch('http://localhost:5000/api/admin/overview');
+      const resOverview = await fetch(apiUrl('/api/admin/overview'));
       if (resOverview.ok) {
         const json = await resOverview.json();
         if (json.data) setMetrics(json.data);
       }
 
       // 2. Landowners
-      const resUsers = await fetch('http://localhost:5000/api/admin/landowners');
+      const resUsers = await fetch(apiUrl('/api/admin/landowners'));
       if (resUsers.ok) {
         const json = await resUsers.json();
         if (json.data) setLandowners(json.data);
       }
 
       // 3. Experts
-      const resExperts = await fetch('http://localhost:5000/api/admin/experts');
+      const resExperts = await fetch(apiUrl('/api/admin/experts'));
       if (resExperts.ok) {
         const json = await resExperts.json();
         if (json.data) setExperts(json.data);
       }
 
       // 4. Parcels
-      const resParcels = await fetch('http://localhost:5000/api/admin/parcels');
+      const resParcels = await fetch(apiUrl('/api/admin/parcels'));
       if (resParcels.ok) {
         const json = await resParcels.json();
         if (json.data && Array.isArray(json.data)) {
@@ -80,14 +81,14 @@ export const AdminDashboard: React.FC = () => {
       }
 
       // 5. Bookings
-      const resBookings = await fetch('http://localhost:5000/api/admin/bookings');
+      const resBookings = await fetch(apiUrl('/api/admin/bookings'));
       if (resBookings.ok) {
         const json = await resBookings.json();
         if (json.data) setBookings(json.data);
       }
 
       // 6. Audit Logs
-      const resLogs = await fetch('http://localhost:5000/api/admin/audit-logs');
+      const resLogs = await fetch(apiUrl('/api/admin/audit-logs'));
       if (resLogs.ok) {
         const json = await resLogs.json();
         if (json.data) setAuditLogs(json.data);
@@ -107,7 +108,7 @@ export const AdminDashboard: React.FC = () => {
   const handleToggleExpertVerification = async (expertId: string, currentStatus: string) => {
     const newStatus = currentStatus === 'verified' ? 'unverified' : 'verified';
     try {
-      await fetch(`http://localhost:5000/api/admin/experts/${expertId}/verify`, {
+      await fetch(apiUrl(`/api/admin/experts/${expertId}/verify`), {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })

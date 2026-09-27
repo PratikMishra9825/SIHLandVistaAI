@@ -1,3 +1,5 @@
+import { apiUrl } from './apiConfig';
+
 export interface BhuvanAdminLocation {
   village: string;
   taluka: string;
@@ -38,7 +40,7 @@ export const fetchBhuvanReverseGeocode = async (
 ): Promise<BhuvanAdminLocation> => {
   // 1. Try Backend Bhuvan / ISRO Proxy
   try {
-    const res = await fetch(`http://localhost:5000/api/lands/bhuvan/reverse-geocode?lat=${lat}&lng=${lng}`);
+    const res = await fetch(apiUrl(`/api/lands/bhuvan/reverse-geocode?lat=${lat}&lng=${lng}`));
     if (res.ok) {
       const json = await res.json();
       if (json.success && json.data && json.data.district) {
@@ -123,7 +125,7 @@ export const fetchBhuvanLulc = async (
   polygonCoordinates?: [number, number][]
 ): Promise<BhuvanLulcResult> => {
   try {
-    const res = await fetch('http://localhost:5000/api/lands/bhuvan/lulc-aoi', {
+    const res = await fetch(apiUrl('/api/lands/bhuvan/lulc-aoi'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

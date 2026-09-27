@@ -2,15 +2,16 @@ import { io, Socket } from 'socket.io-client';
 
 let socket: Socket | null = null;
 
-const SOCKET_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+const SOCKET_URL = import.meta.env.VITE_BACKEND_URL || (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:5000');
 
 export function getSocket(): Socket {
   if (!socket) {
     socket = io(SOCKET_URL, {
       transports: ['websocket', 'polling'],
       autoConnect: true,
-      reconnectionAttempts: 10,
-      reconnectionDelay: 1000
+      reconnectionAttempts: 5,
+      reconnectionDelay: 2000,
+      timeout: 10000
     });
 
     socket.on('connect', () => {

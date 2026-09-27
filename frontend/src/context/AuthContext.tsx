@@ -26,6 +26,8 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+import { apiUrl } from '../services/apiConfig';
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
@@ -45,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       // Verify token with backend
-      fetch('http://localhost:5000/api/auth/me', {
+      fetch(apiUrl('/api/auth/me'), {
         headers: { Authorization: `Bearer ${savedToken}` }
       })
         .then((res) => res.json())
@@ -71,7 +73,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, pass: string) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(apiUrl('/api/auth/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password: pass })
@@ -95,7 +97,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const register = async (formData: { name: string; email: string; phone?: string; password: string; role: UserRole }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch(apiUrl('/api/auth/register'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -150,7 +152,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const logout = () => {
     try {
-      fetch('http://localhost:5000/api/auth/logout', { method: 'POST' }).catch(() => {});
+      fetch(apiUrl('/api/auth/logout'), { method: 'POST' }).catch(() => {});
     } catch (e) {}
     setUser(null);
     setToken(null);

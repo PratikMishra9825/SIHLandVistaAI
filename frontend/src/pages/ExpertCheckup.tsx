@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import { useLand } from '../context/LandContext';
 import { PremiumUpgradeModal } from '../components/PremiumUpgradeModal';
+import { apiUrl } from '../services/apiConfig';
 import { ExpertReportModal } from '../components/ExpertReportModal';
 import { calculateParcelConfidence } from '../utils/aiEngine';
 
@@ -87,7 +88,7 @@ export const ExpertCheckup: React.FC = () => {
   useEffect(() => {
     const fetchExperts = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/experts/nearby');
+        const res = await fetch(apiUrl('/api/experts/nearby'));
         if (res.ok) {
           const json = await res.json();
           if (json.data && Array.isArray(json.data) && json.data.length > 0) {

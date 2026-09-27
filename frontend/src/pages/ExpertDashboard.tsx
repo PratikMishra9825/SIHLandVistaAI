@@ -22,6 +22,7 @@ import {
 import { useLand } from '../context/LandContext';
 import { getSocket, joinExpertRoom } from '../services/socket';
 import type { ExpertBooking, ExpertInspectionReport } from '../types/land';
+import { apiUrl } from '../services/apiConfig';
 import confetti from 'canvas-confetti';
 
 export const ExpertDashboard: React.FC = () => {
@@ -57,7 +58,7 @@ export const ExpertDashboard: React.FC = () => {
   const fetchAssignedBookings = useCallback(async () => {
     try {
       setIsLoading(true);
-      const res = await fetch('http://localhost:5000/api/experts/assigned-bookings?expertId=exp-01');
+      const res = await fetch(apiUrl('/api/experts/assigned-bookings?expertId=exp-01'));
       if (res.ok) {
         const json = await res.json();
         if (json.data && Array.isArray(json.data) && json.data.length > 0) {
@@ -187,7 +188,7 @@ export const ExpertDashboard: React.FC = () => {
   const handleProgressToNextStatus = async (targetStatus: string) => {
     if (!activeBooking) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/experts/bookings/${activeBooking.id}/status`, {
+      const res = await fetch(apiUrl(`/api/experts/bookings/${activeBooking.id}/status`), {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: targetStatus })
@@ -238,7 +239,7 @@ export const ExpertDashboard: React.FC = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:5000/api/experts/bookings/${activeBooking.id}/submit-report`, {
+      const res = await fetch(apiUrl(`/api/experts/bookings/${activeBooking.id}/submit-report`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reportPayload)
